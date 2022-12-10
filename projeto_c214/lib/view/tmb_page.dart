@@ -13,6 +13,7 @@ class TMBPage extends StatefulWidget {
 class _TMBPageState extends State<TMBPage> {
   int resultado = 0;
   TMB tmb = TMB();
+  bool isChecked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -72,6 +73,24 @@ class _TMBPageState extends State<TMBPage> {
                   decoration: const InputDecoration(
                       labelText: 'Entre com a sua idade',
                       border: OutlineInputBorder()),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text('Você é do sexo feminino? '),
+                    Checkbox(
+                        value: isChecked,
+                        onChanged: (bool? value) {
+                          setState(() {
+                            tmb.sexo = isChecked;
+                            print(tmb.sexo);
+                            isChecked = value!;
+                          });
+                        }),
+                  ],
                 ),
                 const SizedBox(
                   height: 15,

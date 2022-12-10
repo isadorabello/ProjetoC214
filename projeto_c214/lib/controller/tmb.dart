@@ -5,6 +5,15 @@ class TMB {
   int idade = 0;
   double tmb = 0;
   int atv = 0;
+  bool sexo = true;
+
+  void escolhaSexo() {
+    if (sexo) {
+      calculoHomem();
+    } else {
+      calculoMulher();
+    }
+  }
 
   int calculoMulher() {
     tmb = taxa * (655 + ((9.6 * peso) + (1.8 * altura) - (4.7 * idade)));
