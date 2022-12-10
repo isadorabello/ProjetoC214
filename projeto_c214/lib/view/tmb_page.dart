@@ -28,6 +28,7 @@ class _TMBPageState extends State<TMBPage> {
             child: Column(
               children: [
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text('TMB: ', style: TextStyle(fontSize: 15)),
                     const SizedBox(
