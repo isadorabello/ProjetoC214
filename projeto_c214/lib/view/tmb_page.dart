@@ -36,7 +36,47 @@ class _TMBPageState extends State<TMBPage> {
                     ),
                     Text("$resultado", style: const TextStyle(fontSize: 15)),
                   ],
-                )
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                TextField(
+                  onChanged: (text) {
+                    tmb.altura = double.parse(text);
+                  },
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: const InputDecoration(
+                      labelText: 'Entre com a sua altura',
+                      border: OutlineInputBorder()),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                TextField(
+                  onChanged: (text) {
+                    tmb.peso = double.parse(text);
+                  },
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: const InputDecoration(
+                      labelText: 'Entre com a seu peso',
+                      border: OutlineInputBorder()),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                TextField(
+                  onChanged: (text) {
+                    tmb.idade = int.parse(text);
+                  },
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: const InputDecoration(
+                      labelText: 'Entre com a sua idade',
+                      border: OutlineInputBorder()),
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                ElevatedButton(onPressed: () {}, child: const Text('Calcular'))
               ],
             ),
           ),
