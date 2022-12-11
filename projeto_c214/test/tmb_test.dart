@@ -18,6 +18,18 @@ void main() {
     expect(res, 1905);
   });
 
+  test('Calcula o TMB', () {
+    TMB tmb = TMB();
+    tmb.altura = alt;
+    tmb.peso = pes;
+    tmb.idade = ida;
+    tmb.taxa = tax;
+    tmb.sexo = true;
+    tmb.calculo();
+
+    expect(tmb.tmb, 1905);
+  });
+
   test('Calcula o TMB de um homem', () {
     TMB tmb = TMB();
     tmb.altura = alt;
@@ -35,5 +47,37 @@ void main() {
     double aux = tmb.classificar();
 
     expect(aux, 1.375);
+  });
+
+  test('Verifica a classificação da taxa ->  Sedentário', () {
+    TMB tmb = TMB();
+    tmb.atv = 0;
+    double aux = tmb.classificar();
+
+    expect(aux, 1.2);
+  });
+
+  test('Verifica a classificação da taxa -> Moderadamente Ativo', () {
+    TMB tmb = TMB();
+    tmb.atv = 2;
+    double aux = tmb.classificar();
+
+    expect(aux, 1.55);
+  });
+
+  test('Verifica a classificação da taxa -> Altamente Ativo', () {
+    TMB tmb = TMB();
+    tmb.atv = 3;
+    double aux = tmb.classificar();
+
+    expect(aux, 1.725);
+  });
+
+  test('Verifica a classificação da taxa -> Extremamente Ativo', () {
+    TMB tmb = TMB();
+    tmb.atv = 4;
+    double aux = tmb.classificar();
+
+    expect(aux, 1.9);
   });
 }
