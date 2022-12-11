@@ -9,9 +9,9 @@ void main() {
     IMC imc = IMC();
     imc.altura = alt;
     imc.peso = pes;
-    double res = imc.calculo();
+    imc.calculo();
 
-    expect(res, pes / (alt * alt));
+    expect(imc.imc, pes / (alt * alt));
   });
 
   test('Classifica o IMC -> Levemente Acima do Peso', () {
