@@ -3,46 +3,45 @@ class TMB {
   double peso = 0;
   double taxa = 0;
   int idade = 0;
-  double tmb = 0;
+  int tmb = 0;
   int atv = 0;
   bool sexo = true;
 
-  void escolhaSexo() {
+  void calculo() {
+    taxa = classificar();
     if (sexo) {
-      calculoHomem();
+      tmb = calculoHomem();
     } else {
-      calculoMulher();
+      tmb = calculoMulher();
     }
   }
 
   int calculoMulher() {
-    tmb = taxa * (655 + ((9.6 * peso) + (1.8 * altura) - (4.7 * idade)));
-    return tmb.round();
+    return (taxa * (655 + ((9.6 * peso) + (1.8 * altura) - (4.7 * idade))))
+        .round();
   }
 
   int calculoHomem() {
-    tmb = taxa * (66 + ((13.7 * peso) + (5 * altura) - (6.8 * idade)));
-    return tmb.round();
+    return (taxa * (66 + ((13.7 * peso) + (5 * altura) - (6.8 * idade))))
+        .round();
   }
 
   double classificar() {
     if (atv == 0) {
       //sedentário
-      taxa = 1.2;
+      return 1.2;
     } else if (atv == 1) {
       //levemente ativo
-      taxa = 1.375;
+      return 1.375;
     } else if (atv == 2) {
       //moderadamente ativo
-      taxa = 1.55;
+      return 1.55;
     } else if (atv == 3) {
       //altamente ativo
-      taxa = 1.725;
+      return 1.725;
     } else {
       //extremamente ativo
-      taxa = 1.9;
+      return 1.9;
     }
-
-    return taxa;
   }
 }
