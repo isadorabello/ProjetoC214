@@ -18,6 +18,10 @@ class _IMCPageState extends State<IMCPage> {
   onPressed() {
     imc.altura = altura;
     imc.peso = peso;
+
+    setState(() {
+      imc.calculo();
+    });
   }
 
   @override
@@ -43,6 +47,36 @@ class _IMCPageState extends State<IMCPage> {
                   Text(imc.res, style: const TextStyle(fontSize: 25)),
                 ],
               ),
+              const SizedBox(
+                height: 30,
+              ),
+              TextField(
+                onChanged: (text) {
+                  altura = double.parse(text);
+                },
+                keyboardType: TextInputType.emailAddress,
+                decoration: const InputDecoration(
+                    labelText: 'Entre com a sua altura (M)',
+                    border: OutlineInputBorder()),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              TextField(
+                onChanged: (text) {
+                  peso = double.parse(text);
+                },
+                keyboardType: TextInputType.emailAddress,
+                decoration: const InputDecoration(
+                    labelText: 'Entre com a seu peso (KG)',
+                    border: OutlineInputBorder()),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              ElevatedButton(
+                  onPressed: onPressed,
+                  child: const Text('Calcular', style: TextStyle(fontSize: 15)))
             ]),
           ),
         ),

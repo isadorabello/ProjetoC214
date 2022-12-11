@@ -6,7 +6,7 @@ class IMC {
 
   void calculo() {
     imc = peso / (altura * altura);
-    classifica();
+    res = classifica();
   }
 
   String classifica() {

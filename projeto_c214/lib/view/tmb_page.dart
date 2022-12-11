@@ -63,7 +63,7 @@ class _TMBPageState extends State<TMBPage> {
                     },
                     keyboardType: TextInputType.emailAddress,
                     decoration: const InputDecoration(
-                        labelText: 'Entre com a sua altura',
+                        labelText: 'Entre com a sua altura (CM)',
                         border: OutlineInputBorder()),
                   ),
                   const SizedBox(
@@ -75,7 +75,7 @@ class _TMBPageState extends State<TMBPage> {
                     },
                     keyboardType: TextInputType.emailAddress,
                     decoration: const InputDecoration(
-                        labelText: 'Entre com a seu peso',
+                        labelText: 'Entre com a seu peso (KG)',
                         border: OutlineInputBorder()),
                   ),
                   const SizedBox(
