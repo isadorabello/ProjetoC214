@@ -14,11 +14,37 @@ void main() {
     expect(imc.imc, pes / (alt * alt));
   });
 
-  test('Classifica o IMC -> Levemente Acima do Peso', () {
+  test('Classifica o IMC -> Obesidade Grau I', () {
     IMC imc = IMC();
-    imc.imc = 25.5;
+    imc.imc = 32.5;
     String aux = imc.classifica();
 
-    expect(aux, 'Levemente Acima do Peso');
+    expect(aux, 'Obesidade Grau I');
+  });
+
+  test('Classifica o IMC -> Obesidade Grau II', () {
+    IMC imc = IMC();
+    imc.imc = 35.5;
+    String aux = imc.classifica();
+
+    expect(aux, 'Obesidade Grau II');
+  });
+
+  test('Classifica o IMC -> Obesidade Grau III', () {
+    IMC imc = IMC();
+    imc.imc = 40;
+    String aux = imc.classifica();
+
+    expect(aux, 'Obesidade Grau III');
+  });
+
+  test('Classifica o IMC', () {
+    IMC imc = IMC();
+    imc.altura = alt;
+    imc.peso = pes;
+    imc.calculo();
+    String aux = imc.res;
+
+    expect(aux, 'Abaixo do Peso');
   });
 }
