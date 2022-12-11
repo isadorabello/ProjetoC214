@@ -10,9 +10,9 @@ class TMB {
   void calculo() {
     taxa = classificar();
     if (sexo) {
-      tmb = calculoHomem();
-    } else {
       tmb = calculoMulher();
+    } else {
+      tmb = calculoHomem();
     }
   }
 

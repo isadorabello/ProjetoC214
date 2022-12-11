@@ -25,9 +25,9 @@ class _TMBPageState extends State<TMBPage> {
     tmb.atv = atv;
     tmb.sexo = isChecked;
 
-    tmb.calculo();
-    print(tmb.tmb);
-    print(tmb.sexo);
+    setState(() {
+      tmb.calculo();
+    });
   }
 
   @override
@@ -51,7 +51,7 @@ class _TMBPageState extends State<TMBPage> {
                       const SizedBox(
                         width: 15,
                       ),
-                      Text("", style: const TextStyle(fontSize: 25)),
+                      Text("${tmb.tmb}", style: const TextStyle(fontSize: 25)),
                     ],
                   ),
                   const SizedBox(
