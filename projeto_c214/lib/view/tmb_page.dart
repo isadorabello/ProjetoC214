@@ -51,7 +51,8 @@ class _TMBPageState extends State<TMBPage> {
                       const SizedBox(
                         width: 15,
                       ),
-                      Text("${tmb.tmb}", style: const TextStyle(fontSize: 25)),
+                      Text("${tmb.tmb} kcal",
+                          style: const TextStyle(fontSize: 25)),
                     ],
                   ),
                   const SizedBox(
